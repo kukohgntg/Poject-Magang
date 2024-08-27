@@ -4,7 +4,14 @@
   <nav class="navbars">
     <a href="/">Home</a>
     <a class="anchor" href="#tentangkami">About Us</a>
-    <a class="anchor" href="#layanan">Outbound</a>
+    <div class="dropdown">
+      <a class="anchor" href="#layanan">Outbound</a>
+      <ul class="submenu">
+        <li><a href="#paket-malng">Paket Outbound Malang</a></li>
+        <li><a href="#paket-batu">Paket Outbound Batu</a></li>
+        <li><a href="#paket-bromo">Paket Outbound Bromo</a></li>
+      </ul>
+    </div>
     <a class="anchor" href="#keunggulan">Wisata</a>
     <a class="anchor" href="#kontak">Contact</a>
     <a class="anchor" href="/p/blog.html">Blog</a>
@@ -84,6 +91,59 @@
   .headermenus.not-home #menu-btns {
     color: #333; /* Change to black when scrolled or not on home page */
   }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    min-width: 200px;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+  }
+
+  .submenu li {
+    list-style: none;
+  }
+
+  .submenu li a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: background 0.3s ease-out;
+  }
+
+  .submenu li a:hover {
+    background: #e7e7e7;
+  }
+
+  .dropdown:hover .submenu {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .submenu {
+      position: static;
+      display: none;
+      width: 100%;
+    }
+
+    .dropdown.active .submenu {
+      display: block;
+    }
+  }
+
   @media (max-width: 768px) {
     #menu-btns {
       display: initial;
@@ -166,6 +226,14 @@
     } else {
       header.classList.remove("scrolled");
     }
+  });
+
+  document.querySelectorAll(".dropdown").forEach((dropdown) => {
+    dropdown.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        dropdown.classList.toggle("active");
+      }
+    });
   });
 </script>
 <!-- AKHIR NAVBAR MELAYANG -->
