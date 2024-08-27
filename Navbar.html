@@ -95,7 +95,8 @@
       position: absolute;
       top: 110%;
       right: 1.5rem;
-      background: #ffffff;
+      background: #ffffff; /* Background putih untuk memastikan teks terlihat jelas */
+      color: #333; /* Warna teks gelap untuk kontras yang baik */
       box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
       border: 0.1rem solid rgba(0, 0, 0, 0.1);
       border-radius: 0.5rem;
@@ -111,6 +112,7 @@
       opacity: 1;
     }
     .headermenus .navbars a {
+      color: #333; /* Warna teks gelap untuk link */
       font-size: 1.7rem;
       display: block;
       padding: 0.7rem 1.2rem;
@@ -123,6 +125,10 @@
     }
     .headermenus .logos img {
       max-height: 50px;
+    }
+    .headermenus .navbars a:hover {
+      color: #555; /* Sedikit lebih gelap saat hover */
+      background: #e7e7e7; /* Background abu-abu muda saat hover */
     }
   }
 </style>
