@@ -1,0 +1,165 @@
+<!-- AWAL NAVBAR MELAYANG -->
+<div class="headermenus style45 spasi1">
+  <a href="/" class="logos style62">Outbound Malang</a>
+  <nav class="navbars">
+    <a href="/">Home</a>
+    <a class="anchor" href="#tentangkami">About Us</a>
+    <a class="anchor" href="#layanan">Outbound</a>
+    <a class="anchor" href="#keunggulan">Wisata</a>
+    <a class="anchor" href="#kontak">Contact</a>
+    <a class="anchor" href="/p/blog.html">Blog</a>
+  </nav>
+  <div id="menu-btns" class="bi bi-list"></div>
+</div>
+
+<style>
+  .headermenu {
+    display: none;
+  }
+  .headermenus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: transparent; /* Transparent by default */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 9%;
+    transition: all 0.3s ease-out;
+  }
+  .headermenus.scrolled,
+  .headermenus.not-home {
+    background: #ffffff; /* Change to white when scrolled or not on home page */
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  }
+  .headermenus .logos {
+    margin: 0;
+    font-size: 3rem;
+    color: #fff; /* White text by default */
+    font-weight: bolder;
+    transition: color 0.3s ease-out;
+  }
+  .headermenus.scrolled .logos,
+  .headermenus.not-home .logos {
+    color: #333; /* Change to black when scrolled or not on home page */
+  }
+  .headermenus .navbars {
+    margin: 5px 0;
+    transition: all 0.3s ease-out;
+  }
+  .headermenus .navbars a {
+    font-size: 2rem;
+    color: #fff; /* White text by default */
+    padding: 2rem 1rem;
+    margin: 2rem 0 1rem 0;
+    transition: all 0.3s ease-out;
+  }
+  .headermenus.scrolled .navbars a,
+  .headermenus.not-home .navbars a {
+    color: #333; /* Change to black when scrolled or not on home page */
+  }
+  .headermenus .navbars a:hover {
+    color: #333;
+    background: #e7e7e7;
+    transition: all 0.3s ease-out;
+  }
+  #menu-btns {
+    cursor: pointer;
+    font-size: 3rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.5rem;
+    color: #fff; /* White icon by default */
+    background: transparent;
+    display: none;
+    transition: all 0.3s ease-out;
+  }
+  #menu-btns:hover {
+    color: #333;
+    background: #e7e7e7;
+    transition: all 0.3s ease-out;
+  }
+  .headermenus.scrolled #menu-btns,
+  .headermenus.not-home #menu-btns {
+    color: #333; /* Change to black when scrolled or not on home page */
+  }
+  @media (max-width: 768px) {
+    #menu-btns {
+      display: initial;
+    }
+    .headermenus {
+      padding: 0.5rem 4%;
+    }
+    .headermenus .navbars {
+      position: absolute;
+      top: 110%;
+      right: 1.5rem;
+      background: #ffffff;
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+      border: 0.1rem solid rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      width: 28rem;
+      transform: scale(0);
+      transform-origin: top right;
+      opacity: 0;
+      margin-top: 0;
+      padding: 0;
+    }
+    .headermenus .navbars.active {
+      transform: scale(1);
+      opacity: 1;
+    }
+    .headermenus .navbars a {
+      font-size: 1.7rem;
+      display: block;
+      padding: 0.7rem 1.2rem;
+      margin: 0;
+      border-radius: 0;
+    }
+    .headermenus .logos {
+      margin: 0.5rem 0;
+      font-size: 2.5rem;
+    }
+    .headermenus .logos img {
+      max-height: 50px;
+    }
+  }
+</style>
+
+<script>
+  let menus = document.querySelector("#menu-btns");
+  let navbars = document.querySelector(".navbars");
+  let header = document.querySelector(".headermenus");
+
+  // Menu toggle for mobile view
+  menus.onclick = () => {
+    menus.classList.toggle("bi-x-lg");
+    navbars.classList.toggle("active");
+  };
+
+  // Function to check if the current page is the homepage
+  function isHomePage() {
+    return (
+      window.location.pathname === "/" ||
+      window.location.pathname === "/index.html"
+    );
+  }
+
+  // Apply styles based on the current page
+  window.addEventListener("load", () => {
+    if (!isHomePage()) {
+      header.classList.add("not-home");
+    }
+  });
+
+  // Detect scroll to change navbar background and text color
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+</script>
+<!-- AKHIR NAVBAR MELAYANG -->
