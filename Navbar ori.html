@@ -1,10 +1,10 @@
 <!-- AWAL NAVBAR MELAYANG -->
-<div class="headermenus style45 spasi1" id="kukoh">
+<div class="headermenus style45 spasi1">
   <a href="/" class="logos style62">Outbound Malang</a>
   <nav class="navbars">
     <a href="/">Beranda</a>
     <div class="dropdown">
-      <a class="anchor" href="#outbound">Outbound</a>
+      <a class="anchor" href="#layanan">Outbound</a>
       <ul class="submenu">
         <li>
           <a href="/p/outbound-malang.html">Paket Outbound Malang</a>
@@ -18,21 +18,21 @@
       </ul>
     </div>
     <div class="dropdown">
-      <a class="anchor" href="#wisata">Wisata</a>
+      <a class="anchor" href="#keunggulan">Wisata</a>
       <ul class="submenu">
         <li>
           <a href="/p/wisata-keluarga.html">Paket Wisata Keluarga</a>
         </li>
         <li>
-          <a href="/p/wisata-grup.html">Paket Wisata Grup</a>
+          <a href="#paket-batu">Paket Wisata Grup</a>
         </li>
         <li>
-          <a href="/p/wisata-edukasi.html">Paket Wisata Edukasi</a>
+          <a href="#paket-bromo">Paket Wisata Edukasi</a>
         </li>
       </ul>
     </div>
-    <a class="anchor menu-hidden" href="#tentangkami">Tentang Kami</a>
-    <a class="anchor menu-hidden" href="#kontak">Kontak</a>
+    <a class="anchor" href="#tentangkami">Tentang Kami</a>
+    <a class="anchor" href="#kontak">Kontak</a>
     <a class="anchor" href="/p/blog-post.html">Blog</a>
   </nav>
   <div id="menu-btns" class="bi bi-list"></div>
@@ -265,13 +265,6 @@
   window.addEventListener("load", () => {
     if (!isHomePage()) {
       header.classList.add("not-home");
-      document
-        .querySelectorAll(".menu-hidden")
-        .forEach((el) => (el.style.display = "none"));
-    } else {
-      document
-        .querySelectorAll(".menu-hidden")
-        .forEach((el) => (el.style.display = "inline"));
     }
   });
 
